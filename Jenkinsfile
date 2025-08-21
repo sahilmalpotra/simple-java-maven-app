@@ -8,14 +8,14 @@ pipeline
     }
 
 
-    // stages {
-    //     stage("build") {
-    //         steps {
-    //             // Pull code from Git repo
-    //             //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
-    //             echo 'bbuilding'
-    //         }
-    //     }
+    stages {
+        stage("clone") {
+            steps {
+                // Pull code from Git repo
+                //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
+                echo 'clone'
+            }
+        }
 
         stage("build") {
             steps {
@@ -25,8 +25,10 @@ pipeline
         }
 
         stage('Docker Build & Push') {
-            steps {
-                script {
+            steps 
+            {
+                script 
+                {
                     sh 'docker build -t java-maven:1.0 . '
                 }
             }
