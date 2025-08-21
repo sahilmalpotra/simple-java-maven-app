@@ -3,16 +3,18 @@ pipeline
     agent any   // run on any available agent (node)
 
     stages {
-        stage('Checkout') {
+        stage('build') {
             steps {
                 // Pull code from Git repo
-                git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
+                //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
+                echo 'bbuilding'
             }
         }
 
-        stage('Build with Maven') {
+        stage('test') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                //sh 'mvn clean package -DskipTests'
+                echo 'bbuilding'
             }
         }
 
@@ -24,11 +26,11 @@ pipeline
         //     }
         // }
 
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'mvn test'
+        //     }
+        // }
 
         // stage('Deploy') {
         //     steps {
