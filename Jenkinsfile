@@ -29,7 +29,7 @@ pipeline
             {
                 script 
                 {
-                    sh 'docker build -t java-maven:1.1 . '
+                    sh 'docker build -t kubesahilmalpotra/java-maven:1.1 . '
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline
             steps {
                  //echo "Deploying ${APP_NAME}..."
                 sh 'docker login -u kubesahilmalpotra -p sahilajaymalpotra'
-                sh 'docker push java-maven:1.1'
+                sh 'docker push kubesahilmalpotra/java-maven:1.1'
             }
         }
     }
