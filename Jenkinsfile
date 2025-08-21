@@ -29,7 +29,7 @@ pipeline
             {
                 script 
                 {
-                    sh 'docker build -t java-maven:1.0 . '
+                    sh 'docker build -t java-maven:1.1 . '
                 }
             }
         }
