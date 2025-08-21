@@ -6,7 +6,7 @@ pipeline
         stage('Checkout') {
             steps {
                 // Pull code from Git repo
-                git branch: 'main', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
+                git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
             }
         }
 
@@ -16,13 +16,13 @@ pipeline
             }
         }
 
-        stage('Docker Build & Push') {
-            steps {
-                script {
-                    docker.build("${APP_NAME}:latest")
-                }
-            }
-        }
+        // stage('Docker Build & Push') {
+        //     steps {
+        //         script {
+        //             docker.build("${APP_NAME}:latest")
+        //         }
+        //     }
+        // }
 
         stage('Test') {
             steps {
@@ -30,12 +30,12 @@ pipeline
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo "Deploying ${APP_NAME}..."
-                // Example only, here you might run kubectl, ansible, helm etc.
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         echo "Deploying ${APP_NAME}..."
+        //         // Example only, here you might run kubectl, ansible, helm etc.
+        //     }
+        // }
     }
 
     post {
