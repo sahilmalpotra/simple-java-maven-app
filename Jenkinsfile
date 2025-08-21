@@ -3,7 +3,7 @@ pipeline
     agent any   // run on any available agent (node)
 
     tools {
-        maven 'maven-3.9.11'   // 👈 the name you gave in Jenkins Global Tool Configuration
+        maven 'maven'   // 👈 the name you gave in Jenkins Global Tool Configuration
         //jdk 'JDK-17'          // optional, if you also configured a JDK
     }
 
