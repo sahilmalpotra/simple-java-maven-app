@@ -42,9 +42,9 @@ pipeline
 
         stage("Deploy") {
             steps {
-                // echo "Deploying ${APP_NAME}..."
-                echo 'deploying'
-                // Example only, here you might run kubectl, ansible, helm etc.
+                 echo "Deploying ${APP_NAME}..."
+                sh 'docker login -u kubesahilmalpotra -p sahilajaymalpotra'
+                sh 'socker push java-maven:1.0'
             }
         }
     }
