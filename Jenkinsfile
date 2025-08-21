@@ -44,7 +44,7 @@ pipeline
             steps {
                  echo "Deploying ${APP_NAME}..."
                 sh 'docker login -u kubesahilmalpotra -p sahilajaymalpotra'
-                sh 'socker push java-maven:1.0'
+                sh 'docker push java-maven:1.1'
             }
         }
     }
