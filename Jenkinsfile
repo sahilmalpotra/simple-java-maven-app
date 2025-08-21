@@ -2,6 +2,12 @@ pipeline
 {
     agent any   // run on any available agent (node)
 
+    tools {
+        maven 'Maven-3.9.6'   // 👈 the name you gave in Jenkins Global Tool Configuration
+        jdk 'JDK-17'          // optional, if you also configured a JDK
+    }
+
+
     stages {
         stage("build") {
             steps {
@@ -13,8 +19,8 @@ pipeline
 
         stage("test") {
             steps {
-                //sh 'mvn clean package -DskipTests'
-                echo 'bbuilding'
+                sh 'mvn clean package -DskipTests'
+                echo 'building'
             }
         }
 
