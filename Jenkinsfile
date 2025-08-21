@@ -27,7 +27,7 @@ pipeline
         stage('Docker Build & Push') {
             steps {
                 script {
-                    docker build -t java-maven:1.0 .
+                    sh 'docker build -t java-maven:1.0 . '
                 }
             }
         }
