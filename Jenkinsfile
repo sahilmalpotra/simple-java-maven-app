@@ -3,7 +3,7 @@ pipeline
     agent any   // run on any available agent (node)
 
     stages {
-        stage('build') {
+        stage("build") {
             steps {
                 // Pull code from Git repo
                 //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
@@ -11,7 +11,7 @@ pipeline
             }
         }
 
-        stage('test') {
+        stage("test") {
             steps {
                 //sh 'mvn clean package -DskipTests'
                 echo 'bbuilding'
@@ -32,7 +32,7 @@ pipeline
         //     }
         // }
 
-        stage('Deploy') {
+        stage("Deploy") {
             steps {
                 // echo "Deploying ${APP_NAME}..."
                 echo 'deploying'
