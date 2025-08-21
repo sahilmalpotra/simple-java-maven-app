@@ -8,29 +8,29 @@ pipeline
     }
 
 
-    stages {
-        stage("build") {
-            steps {
-                // Pull code from Git repo
-                //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
-                echo 'bbuilding'
-            }
-        }
+    // stages {
+    //     stage("build") {
+    //         steps {
+    //             // Pull code from Git repo
+    //             //git branch: 'master', url: 'https://github.com/sahilmalpotra/simple-java-maven-app.git'
+    //             echo 'bbuilding'
+    //         }
+    //     }
 
-        stage("test") {
+        stage("build") {
             steps {
                 sh 'mvn clean package -DskipTests'
                 echo 'building'
             }
         }
 
-        // stage('Docker Build & Push') {
-        //     steps {
-        //         script {
-        //             docker.build("${APP_NAME}:latest")
-        //         }
-        //     }
-        // }
+        stage('Docker Build & Push') {
+            steps {
+                script {
+                    docker build -t java-maven:1.0 .
+                }
+            }
+        }
 
         // stage('Test') {
         //     steps {
