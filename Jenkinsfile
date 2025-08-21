@@ -32,12 +32,13 @@ pipeline
         //     }
         // }
 
-        // stage('Deploy') {
-        //     steps {
-        //         echo "Deploying ${APP_NAME}..."
-        //         // Example only, here you might run kubectl, ansible, helm etc.
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+                // echo "Deploying ${APP_NAME}..."
+                echo 'deploying'
+                // Example only, here you might run kubectl, ansible, helm etc.
+            }
+        }
     }
 
     post {
